@@ -1,8 +1,10 @@
 import express from 'express';
 import { MongoClient } from 'mongodb'
 import { ObjectId } from 'mongodb';
+import cors from 'cors';
 const app = express();
 app.use(express.json());
+app.use(cors());
 const url = 'mongodb+srv://sarish:sari@movie.9orvgxr.mongodb.net/?retryWrites=true&w=majority&appName=movie';
 const client = new MongoClient(url);
 await client.connect();
